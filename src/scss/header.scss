@@ -1,0 +1,319 @@
+//====================================================================================================
+
+.header {
+  background: #61703d;
+  &__container {
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    @include adaptiveValue("column-gap", 41, 24, 0, 1213, 991);
+
+    @media (max-width: $pc) and (min-width: $tablet) {
+      flex-wrap: wrap;
+      padding-top: toRem(15);
+    }
+    @media (max-width: $tablet) {
+      padding: toRem(8) 0;
+    }
+    @media (max-width: $tablet) and (min-width: $tablet2) {
+      display: grid;
+      grid-template-columns: 1fr toRem(103) 1fr;
+    }
+  }
+
+  &__icon {
+  }
+
+  &__logo {
+    max-width: toRem(103);
+    flex-shrink: 0;
+    img {
+      max-width: 100%;
+    }
+
+    transition: opacity 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__menu {
+    @media (max-width: $pc) and (min-width: $tablet) {
+      flex: 1 1 100%;
+    }
+    @media (max-width: $pc) {
+      order: 10;
+    }
+  }
+
+  &__actions {
+    margin-left: auto;
+  }
+}
+
+.menu {
+  @media (max-width: $tablet) {
+    position: absolute;
+  }
+  &__body {
+    @media (max-width: $tablet) {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: -100%;
+      overflow: auto;
+      z-index: 6;
+
+      padding: toRem(18) toRem(24) toRem(40);
+
+      background-color: #61703d;
+      transition: left 0.3s ease 0s;
+
+      .menu-open & {
+        left: 0;
+      }
+
+      background-image: url("@img/decore-menu.svg");
+      background-repeat: no-repeat;
+      background-size: toRem(213) toRem(1013);
+      background-position: calc(100% + toRem(22)) toRem(88);
+    }
+  }
+
+  &__title {
+    @media (max-width: $tablet) {
+      margin-bottom: toRem(32);
+    }
+    @media (min-width: $tablet) {
+      display: none;
+    }
+  }
+
+  &__logo {
+    @media (min-width: $tablet) {
+      display: none;
+    }
+
+    max-width: toRem(103);
+    margin: 0 auto;
+    display: block;
+    flex-shrink: 0;
+
+    margin-bottom: toRem(40);
+    img {
+      max-width: 100%;
+    }
+
+    transition: opacity 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    @include adaptiveValue("column-gap", 24, 15, 0, 1213, 991);
+
+    @media (max-width: $pc) and (min-width: $tablet) {
+      justify-content: center;
+    }
+    @media (max-width: $tablet) {
+      row-gap: toRem(28);
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    font-family: e-Ukraine;
+    font-size: toRem(13);
+    font-weight: 300;
+    line-height: 150%; /* 19.5px */
+    text-transform: uppercase;
+
+    @media (min-width: $tablet) {
+      padding: toRem(26) 0;
+      opacity: 0.7;
+    }
+    @media (max-width: $tablet) {
+      font-family: e-Ukraine Head;
+      font-size: toRem(18);
+      font-weight: 700;
+      line-height: 150%; /* 27px */
+    }
+
+    transition: opacity 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        opacity: 1;
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: toRem(3);
+      top: 0;
+      left: 0;
+      background-color: #fff;
+      opacity: 0;
+      transition: opacity 0.3s ease 0s;
+
+      @media (max-width: $pc) {
+        bottom: 0;
+        top: auto;
+      }
+      @media (max-width: $tablet) {
+        display: none;
+      }
+    }
+  }
+}
+
+.actions-header {
+  display: flex;
+  align-items: center;
+  column-gap: toRem(14);
+  &__link {
+    font-family: e-Ukraine;
+    font-size: toRem(13);
+    font-weight: 300;
+    line-height: 150%; /* 19.5px */
+    text-transform: uppercase;
+
+    padding: toRem(5) 0;
+
+    @media (min-width: $tablet2) {
+      opacity: 0.7;
+    }
+
+    transition: opacity 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__phone {
+    padding-left: toRem(18);
+    padding-right: toRem(18);
+
+    font-family: e-Ukraine;
+    font-size: toRem(13);
+    font-weight: 400;
+    line-height: 150%; /* 19.5px */
+
+    @media (max-width: $tablet2) {
+      width: toRem(48);
+      height: toRem(48);
+      flex-shrink: 0;
+      padding: 0;
+    }
+
+    span {
+      @media (max-width: $tablet2) {
+        display: none;
+      }
+    }
+
+    &::before {
+      @media (min-width: $tablet2) {
+        display: none;
+      }
+      font-size: toRem(24);
+    }
+  }
+}
+
+//====================================================================================================
+
+//Burger
+
+.icon-menu {
+  display: none;
+  width: max-content;
+  position: relative;
+  z-index: 7;
+
+  @media (max-width: $tablet) {
+    display: block;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: toRem(40);
+    height: toRem(40);
+    display: block;
+    background-color: #61703d;
+
+    top: toRem(-14);
+    left: toRem(-5);
+  }
+  &__wrapper {
+    @media (max-width: $tablet) {
+      display: block;
+      position: relative;
+      width: toRem(30);
+      height: toRem(16);
+      z-index: 8;
+      @media (any-hover: none) {
+        cursor: default;
+      }
+      span,
+      &::before,
+      &::after {
+        content: "";
+        transition: all 0.3s ease 0s;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: toRem(2);
+        background-color: #fff;
+      }
+      &::before {
+        top: 0;
+      }
+      &::after {
+        bottom: 0;
+        width: calc(100% - toRem(10));
+      }
+      span {
+        top: calc(50% - toRem(1));
+      }
+      .menu-open & {
+        span {
+          width: 0;
+        }
+        &::before,
+        &::after {
+        }
+        &::before {
+          top: calc(50% - toRem(1));
+          transform: rotate(-45deg);
+        }
+        &::after {
+          bottom: calc(50% - toRem(1));
+          transform: rotate(45deg);
+          width: 100%;
+        }
+      }
+    }
+  }
+}
