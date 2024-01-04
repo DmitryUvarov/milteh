@@ -1,7 +1,25 @@
 //====================================================================================================
 
 .header {
-  background: #61703d;
+  background-color: #61703d;
+  transition:
+    top 0.5s 0s,
+    background-color 0.5s,
+    opacity 1.5s 0s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+
+  &._header-scroll {
+    top: calc((var(--header-height) + toRem(10)) * -1);
+  }
+
+  &._header-show {
+    top: 0;
+  }
+
   &__container {
   }
 

@@ -206,9 +206,9 @@ import * as flsScroll from "./files/scroll/scroll.js"
 
 // Функціонал додавання класів до хедеру під час прокручування
 // Документація: https://template.fls.guru/template-docs/modul-dobavleniya-klassov-k-shapke-pri-prokrutke-stranicy.html
-// flsScroll.headerScroll();
+flsFunctions.getHeaderHeight(".header")
 
-// flsFunctions.getHeaderHeight('.header');
+flsScroll.headerScroll()
 
 // Модуль анімація цифрового лічильника
 // Документація: https://template.fls.guru/template-docs/modul-animacii-cifrovogo-lichilnika.html
