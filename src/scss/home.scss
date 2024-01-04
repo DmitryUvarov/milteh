@@ -503,6 +503,7 @@
   }
 
   &__label {
+    cursor: pointer;
     border: toRem(1) solid #696969;
 
     padding: toRem(13) toRem(10);
@@ -525,6 +526,17 @@
       flex: 0 0 toRem(96);
       text-align: center;
       justify-content: center;
+    }
+
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 2;
     }
   }
 
