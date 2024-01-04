@@ -679,7 +679,7 @@
 
   &__item {
     &:nth-child(even) {
-      @media (min-width: $tablet2) {
+      @media (min-width: $tablet) {
         flex-direction: row-reverse;
       }
     }
@@ -727,5 +727,218 @@
   &__text {
   }
 }
-.text {
+
+//========================================================================================================================================================
+
+.cooperation {
+  @include adaptiveValue("padding-top", 72, 64, 0, 800, 375);
+  @include adaptiveValue("padding-bottom", 123, 64, 0, 1213, 800);
+  @media (min-width: $tablet2) {
+    @include adaptiveValue("padding-top", 92, 72, 0, 1213, 800);
+  }
+  &__container {
+  }
+
+  &__title {
+    @include adaptiveValue("margin-bottom", 32, 24, 0, 1213, 800);
+
+    @media (max-width: $tablet2) {
+      @include adaptiveValue("font-size", 42, 30, 0, 800, 375);
+    }
+  }
+
+  &__text {
+    margin-bottom: toRem(42);
+  }
+
+  &__items {
+    display: grid;
+    @include adaptiveValue("gap", 8, 2, 0, 800, 375);
+
+    @media (min-width: $pc) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 8, 2, 0, 800, 375);
+    }
+  }
+
+  &__item {
+  }
+
+  &__step {
+  }
+}
+
+.item-cooperation {
+  @include adaptiveValue("padding", 36, 24, 0, 800, 375);
+  background-color: #61703d;
+
+  display: flex;
+
+  gap: toRem(24);
+
+  @media (min-width: $pc) {
+    flex-direction: column;
+  }
+  @media (max-width: $pc) {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media (max-width: $tablet2) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__icon {
+    width: toRem(64);
+    height: toRem(64);
+    flex: 0 0 toRem(64);
+    position: relative;
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+
+  &__top {
+    display: flex;
+    gap: toRem(24);
+
+    @media (min-width: $pc) {
+      flex-direction: column;
+    }
+    @media (max-width: $pc) {
+      align-items: center;
+    }
+  }
+
+  &__title {
+    font-family: e-Ukraine Head;
+    @include adaptiveValue("font-size", 18, 15, 0, 800, 375);
+    font-weight: 700;
+    line-height: 150%; /* 27px */
+    text-transform: uppercase;
+
+    @media (max-width: $pc) {
+      flex: 1 1 auto;
+    }
+    @media (max-width: $tablet2) {
+      font-weight: 400;
+    }
+  }
+
+  &__text {
+    font-size: toRem(13);
+    font-weight: 200;
+
+    @media (max-width: $pc) {
+      flex: 0 0 percent(284, 680);
+    }
+  }
+}
+.step-cooperation {
+  @include adaptiveValue("padding", 64, 32, 0, 1213, 800);
+  background-color: #61703d;
+  &__title {
+    margin-bottom: toRem(24);
+
+    @media (max-width: $tablet2) {
+      @include adaptiveValue("font-size", 42, 30, 0, 800, 375);
+    }
+  }
+
+  &__text {
+    margin-bottom: toRem(42);
+  }
+
+  &__items {
+    display: grid;
+    column-gap: toRem(24);
+    row-gap: toRem(15);
+
+    @media (min-width: $tablet2) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__item {
+    @media (min-width: $tablet2) {
+      max-width: toRem(322);
+    }
+  }
+}
+.item-step {
+  &:last-child {
+    .item-step__dot::before {
+      display: none;
+    }
+  }
+  &__name {
+    font-family: e-Ukraine Head;
+    font-size: toRem(24);
+    font-weight: 700;
+    line-height: 95%; /* 22.8px */
+    text-transform: uppercase;
+    margin-bottom: toRem(24);
+  }
+
+  &__dot {
+    margin-bottom: toRem(24);
+    height: 24px;
+
+    position: relative;
+    &::after {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: toRem(4) solid #fff;
+      background-color: #61703d;
+      position: relative;
+      z-index: 2;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: calc(100% + toRem(-5));
+      height: toRem(4);
+      top: 50%;
+      transform: translateY(-50%);
+      left: toRem(5);
+      background-color: #fff;
+      display: block;
+      z-index: 1;
+
+      @media (min-width: $tablet2) {
+        width: calc(100% + toRem(24));
+        left: toRem(20);
+      }
+    }
+  }
+
+  &__title {
+    font-family: e-Ukraine Head;
+    font-size: toRem(18);
+    font-weight: 700;
+    line-height: 150%; /* 27px */
+    text-transform: uppercase;
+
+    &:not(:last-child) {
+      margin-bottom: toRem(9);
+    }
+  }
+
+  &__text {
+  }
 }
