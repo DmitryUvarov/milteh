@@ -173,3 +173,89 @@
 }
 
 //====================================================================================================
+
+.about {
+  @include adaptiveValue("padding-top", 65, 30, 0, 800, 375);
+  @include adaptiveValue("padding-bottom", 70, 40, 0, 800, 375);
+  @media (min-width: $tablet2) {
+    @include adaptiveValue("padding-top", 150, 65, 0, 1213, 800);
+    @include adaptiveValue("padding-bottom", 110, 70, 0, 1213, 800);
+  }
+
+  &__container {
+  }
+
+  &__body {
+    display: flex;
+    gap: toRem(45);
+
+    @media (max-width: $pc) {
+      flex-direction: column;
+    }
+  }
+
+  &__image-ibg {
+    position: relative;
+    height: fit-content;
+
+    @media (min-width: $pc) {
+      flex: 0 0 percent(648, 1165);
+      padding-bottom: percent(521, 1165);
+    }
+    @media (max-width: $pc) {
+      max-width: toRem(648);
+      width: 100%;
+      align-self: center;
+      flex: 0 0 toRem(521);
+    }
+    @media (max-width: $tablet2) {
+      flex: 0 0 auto;
+      padding-bottom: percent(261, 327);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: toRem(100);
+      height: toRem(89);
+      top: toRem(-1);
+      right: toRem(-1);
+      display: block;
+      background-color: #fff;
+      z-index: 1;
+
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 50%);
+
+      @media (max-width: $tablet2) {
+        width: toRem(50);
+        height: toRem(44);
+      }
+    }
+  }
+
+  &__content {
+    display: grid;
+    gap: toRem(24);
+  }
+
+  &__title {
+  }
+
+  &__text {
+  }
+
+  &__buttons {
+    display: flex;
+    gap: toRem(11);
+    margin-top: auto;
+    @media (max-width: $tablet2) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__button {
+    @media (max-width: $tablet2) {
+      flex: 1 1 100%;
+    }
+  }
+}

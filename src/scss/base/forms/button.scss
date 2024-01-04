@@ -10,7 +10,6 @@
   padding-top: toRem(10);
   padding-bottom: toRem(10);
 
-  border: 1px solid #1c210f;
   background-color: #1c210f;
 
   color: #fff;
@@ -27,11 +26,19 @@
   @media (any-hover: hover) {
     &:hover {
       background-color: #000;
-      border-color: #000;
     }
   }
   &--fw {
     width: 100%;
+  }
+
+  &_green {
+    background-color: #61703d;
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #434e28;
+      }
+    }
   }
 }
 
@@ -63,6 +70,17 @@
     &:hover {
       color: #d9d9d9;
       border-color: #d9d9d9;
+    }
+  }
+
+  &_green {
+    color: #1c210f;
+    border-color: #1c210f;
+    @media (any-hover: hover) {
+      &:hover {
+        color: #434e28;
+        border-color: #c7c7c7;
+      }
     }
   }
 }
