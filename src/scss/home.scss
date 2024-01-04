@@ -652,3 +652,80 @@
     }
   }
 }
+
+//========================================================================================================================================================
+
+.production {
+  background-color: #61703d;
+  @include adaptiveValue("padding-top", 72, 64, 0, 800, 375);
+  @include adaptiveValue("padding-bottom", 123, 64, 0, 1213, 800);
+  @media (min-width: $tablet2) {
+    @include adaptiveValue("padding-top", 112, 72, 0, 1213, 800);
+  }
+  &__container {
+  }
+
+  &__title {
+    @media (max-width: $tablet2) {
+      @include adaptiveValue("font-size", 42, 30, 0, 800, 375);
+    }
+    @include adaptiveValue("margin-bottom", 70, 42, 0, 1213, 800);
+  }
+
+  &__items {
+    display: grid;
+    @include adaptiveValue("gap", 70, 42, 0, 1213, 800);
+  }
+
+  &__item {
+    &:nth-child(even) {
+      @media (min-width: $tablet2) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}
+
+.item-production {
+  display: flex;
+  align-items: center;
+  column-gap: toRem(64);
+  row-gap: toRem(24);
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+  }
+
+  &__image-ibg {
+    @media (min-width: $tablet) {
+      flex: 0 0 percent(532, 1165);
+      padding-bottom: percent(468, 1165);
+    }
+    @media (max-width: $tablet) {
+      width: 100%;
+      padding-bottom: percent(618, 752);
+    }
+  }
+
+  &__content {
+  }
+
+  &__title {
+    color: #fff;
+    font-family: e-Ukraine Head;
+    font-weight: 700;
+    line-height: 95%; /* 28.5px */
+    text-transform: uppercase;
+
+    @include adaptiveValue("font-size", 30, 24, 0, 1213, 800);
+
+    &:not(:last-child) {
+      margin-bottom: toRem(24);
+    }
+  }
+
+  &__text {
+  }
+}
+.text {
+}
