@@ -143,3 +143,42 @@
     line-height: 160%; /* 20.8px */
   }
 }
+
+//========================================================================================================================================================
+.breadcrumbs {
+  white-space: nowrap;
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    color: #1c210f;
+    font-family: e-Ukraine Head;
+    font-size: toRem(12);
+    font-weight: 400;
+    line-height: 175%; /* 21px */
+
+    &:not(:last-child) {
+      &::after {
+        content: "/";
+        margin: 0 toRem(24);
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__link {
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #61703d;
+      }
+    }
+  }
+
+  &__current {
+    opacity: 0.5;
+  }
+}

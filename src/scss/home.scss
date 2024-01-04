@@ -1117,3 +1117,34 @@
     }
   }
 }
+
+//========================================================================================================================================================
+
+.politic {
+  padding-top: calc(var(--header-height) + toRem(24));
+  @include adaptiveValue("padding-bottom", 85, 45);
+  &__container {
+  }
+
+  &__breadcrumbs {
+    margin-bottom: toRem(42);
+  }
+
+  &__title {
+    max-width: toRem(867);
+    margin-bottom: toRem(24);
+    @include adaptiveValue("font-size", 64, 24);
+  }
+
+  &__body {
+    max-width: toRem(867);
+  }
+}
+.title {
+  &_black {
+  }
+}
+.text {
+  &_black {
+  }
+}
