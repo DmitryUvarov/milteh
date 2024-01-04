@@ -5,6 +5,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  gap: toRem(10);
   padding-left: toRem(20);
   padding-right: toRem(20);
   padding-top: toRem(10);
@@ -30,6 +31,10 @@
   }
   &--fw {
     width: 100%;
+  }
+
+  &::before {
+    font-size: toRem(16);
   }
 
   &_green {

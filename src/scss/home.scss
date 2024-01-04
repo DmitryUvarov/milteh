@@ -544,3 +544,111 @@
     align-self: center;
   }
 }
+
+//========================================================================================================================================================
+
+.protocol {
+  @include adaptiveValue("padding-top", 72, 64, 0, 800, 375);
+  @include adaptiveValue("padding-bottom", 72, 64, 0, 800, 375);
+  @media (min-width: $tablet2) {
+    @include adaptiveValue("padding-top", 112, 72, 0, 1213, 800);
+    @include adaptiveValue("padding-bottom", 112, 72, 0, 1213, 800);
+  }
+  &__container {
+  }
+
+  &__body {
+    display: flex;
+    column-gap: toRem(40);
+    row-gap: toRem(32);
+
+    @media (max-width: $pc) {
+      flex-direction: column;
+    }
+  }
+
+  &__maintitle {
+    flex: 1 1 auto;
+
+    @media (max-width: $tablet2) {
+      @include adaptiveValue("font-size", 42, 30, 0, 800, 375);
+    }
+  }
+
+  &__content {
+    background-color: #eaeaea;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    @media (min-width: $pc) {
+      flex: 0 0 percent(471, 1165);
+    }
+    @media (max-width: $tablet2) {
+      flex-direction: column;
+    }
+  }
+
+  &__image-ibg {
+    flex: 0 0 percent(298, 471);
+    padding-bottom: percent(248, 471);
+
+    margin-left: toRem(-32);
+    margin-bottom: toRem(-12);
+
+    @media (max-width: $pc) {
+      margin-top: toRem(-65);
+      margin-bottom: toRem(-69);
+
+      flex: 0 0 percent(454, 752);
+      padding-bottom: percent(378, 752);
+    }
+
+    @media (max-width: $tablet2) {
+      flex: 0 0 auto;
+      width: calc(100% + toRem(128));
+      margin-left: toRem(0);
+      margin-top: toRem(-70);
+
+      margin-bottom: toRem(0);
+
+      padding-bottom: percent(378, 327);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(9);
+
+    padding: toRem(20) toRem(20) toRem(20) 0;
+
+    @media (max-width: $tablet2) {
+      padding: toRem(15) toRem(24) toRem(24);
+    }
+  }
+
+  &__title {
+    color: #1c210f;
+    font-family: e-Ukraine Head;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 95%; /* 22.8px */
+    text-transform: uppercase;
+  }
+
+  &__text {
+    color: #2c2c2c;
+    font-family: e-Ukraine;
+    font-size: toRem(15);
+    font-weight: 200;
+    line-height: 175%; /* 26.25px */
+  }
+
+  &__button {
+    width: fit-content;
+
+    @media (max-width: $tablet2) {
+      width: 100%;
+    }
+  }
+}
