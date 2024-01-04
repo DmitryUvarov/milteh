@@ -711,7 +711,8 @@
       z-index: -1;
 
       @media (max-width: $tablet2) {
-        display: none;
+        top: toRem(-9);
+        left: toRem(-300);
       }
     }
   }
