@@ -14,6 +14,26 @@
   }
 }
 
+.text {
+  color: #fff;
+  font-family: e-Ukraine;
+  font-size: toRem(15);
+  font-weight: 200;
+  line-height: 175%; /* 26.25px */
+
+  &_black {
+    color: #1c210f;
+  }
+}
+
+.company {
+  font-family: e-Ukraine;
+  font-size: toRem(15);
+  font-weight: 700;
+  line-height: 95%; /* 14.25px */
+  text-transform: uppercase;
+}
+
 //========================================================================================================================================================
 
 // .fancybox__container {
@@ -21,3 +41,66 @@
 // }
 
 //========================================================================================================================================================
+
+//========================================================================================================================================================
+
+.tippy {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: toRem(34);
+  height: toRem(34);
+  border-radius: 50%;
+  background-color: #61703d;
+
+  position: absolute;
+  z-index: 4;
+
+  @media (any-hover: hover) {
+    &:hover {
+      &::before {
+        background-color: #fff;
+      }
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+
+    display: block;
+    width: toRem(14);
+    height: toRem(14);
+    border-radius: 50%;
+    border: toRem(2) solid #fff;
+    transition: background-color 0.3s ease 0s;
+  }
+
+  &[data-tippy="dark"] {
+    background-color: #1c210f;
+  }
+}
+
+.tippy-block {
+  display: grid;
+  gap: toRem(7);
+  max-width: toRem(220);
+  &_dark {
+  }
+  &__title {
+    color: #fff;
+    font-family: e-Ukraine Head;
+    font-size: toRem(12);
+    font-weight: 400;
+    line-height: 150%; /* 18px */
+    text-transform: uppercase;
+  }
+  &__text {
+    color: #fff;
+    font-family: e-Ukraine;
+    font-size: toRem(13);
+    font-weight: 300;
+    line-height: 160%; /* 20.8px */
+  }
+}

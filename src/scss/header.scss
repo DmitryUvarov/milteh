@@ -1,7 +1,6 @@
 //====================================================================================================
 
 .header {
-  background-color: #61703d;
   transition:
     top 0.5s 0s,
     background-color 0.5s,
@@ -14,6 +13,7 @@
 
   &._header-scroll {
     top: calc((var(--header-height) + toRem(10)) * -1);
+    background-color: #61703d;
   }
 
   &._header-show {
