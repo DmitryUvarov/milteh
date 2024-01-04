@@ -153,22 +153,6 @@
   }
 
   &__tippy {
-    &_1 {
-      top: percent(180, 802);
-      left: percent(563, 776);
-    }
-    &_2 {
-      top: percent(260, 802);
-      left: percent(451, 776);
-    }
-    &_3 {
-      top: percent(378, 802);
-      left: percent(410, 776);
-    }
-    &_4 {
-      top: percent(530, 802);
-      left: percent(226, 776);
-    }
   }
 }
 
@@ -330,37 +314,6 @@
     left: 0;
   }
 
-  &__tippy {
-    &_1 {
-      top: percent(53, 668);
-      left: percent(369, 1125);
-    }
-
-    &_2 {
-      top: percent(242, 668);
-      left: percent(515, 1125);
-    }
-
-    &_3 {
-      top: percent(332, 668);
-      left: percent(272, 1125);
-    }
-
-    &_4 {
-      top: percent(350, 668);
-      left: percent(562, 1125);
-    }
-    &_5 {
-      top: percent(378, 668);
-      left: percent(881, 1125);
-    }
-
-    &_6 {
-      top: percent(518, 668);
-      left: percent(272, 1125);
-    }
-  }
-
   &__content {
     max-width: toRem(768);
     margin: 0 auto;
@@ -455,5 +408,139 @@
     text-transform: uppercase;
   }
 }
-.tippy {
+
+.contact-milteh {
+  padding: toRem(64) toRem(100) toRem(84);
+  background-color: #2c2c2c;
+
+  @media (max-width: $pc) {
+    padding: toRem(42) toRem(24) toRem(62);
+  }
+
+  &__title {
+    text-align: center;
+
+    font-family: e-Ukraine Head;
+    @include adaptiveValue("font-size", 42, 30, 0, 1213, 800);
+    font-weight: 700;
+    line-height: 95%; /* 39.9px */
+    text-transform: uppercase;
+
+    margin-bottom: toRem(24);
+  }
+
+  &__text {
+    text-align: center;
+    font-family: e-Ukraine;
+    font-size: toRem(15);
+    font-weight: 200;
+    line-height: 175%; /* 26.25px */
+
+    margin-bottom: toRem(24);
+  }
+
+  &__form {
+  }
+}
+.form-milteh {
+  display: flex;
+  flex-direction: column;
+  &__items {
+    margin-bottom: toRem(45);
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: toRem(40);
+    row-gap: toRem(24);
+
+    @media (max-width: $tablet) {
+      grid-template-columns: 1fr;
+      row-gap: toRem(40);
+    }
+  }
+
+  &__item {
+    display: flex;
+    column-gap: toRem(40);
+    row-gap: toRem(8);
+
+    @media (max-width: $tablet2) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__label {
+    border: toRem(1) solid #696969;
+
+    padding: toRem(13) toRem(10);
+    height: toRem(49);
+
+    display: flex;
+    align-items: center;
+
+    color: #fff;
+    font-family: Manrope;
+    font-size: toRem(15);
+    font-weight: 600;
+    line-height: 150%; /* 22.5px */
+    text-transform: uppercase;
+
+    white-space: nowrap;
+    height: fit-content;
+
+    @media (min-width: $tablet2) {
+      flex: 0 0 toRem(96);
+      text-align: center;
+      justify-content: center;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    text-align: end;
+    color: #fff;
+    font-family: Manrope;
+    font-size: toRem(15);
+    font-weight: 600;
+    line-height: 150%; /* 22.5px */
+    text-transform: uppercase;
+
+    background-color: transparent;
+  }
+
+  &__body {
+    flex: 1 1 auto;
+  }
+
+  &__title {
+    font-family: e-Ukraine;
+    font-size: toRem(15);
+    font-weight: 400;
+    line-height: 150%; /* 22.5px */
+    text-transform: uppercase;
+    margin-bottom: toRem(15);
+  }
+
+  &__range {
+  }
+
+  &__line {
+  }
+
+  &__bottom {
+    font-family: e-Ukraine;
+    font-size: toRem(15);
+    font-weight: 200;
+    line-height: 175%; /* 26.25px */
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: toRem(10);
+    margin-top: toRem(20);
+  }
+
+  &__button {
+    align-self: center;
+  }
 }
