@@ -18,7 +18,7 @@
     }
 
     &::before {
-      content: url("@img/hero/decore.svg");
+      content: url("@img/decore/decore.svg");
       position: absolute;
       width: 1013px;
       height: 213px;
@@ -304,6 +304,21 @@
     height: 100%;
     top: 0;
     left: 0;
+    z-index: 2;
+    &::before {
+      content: url("@img/decore/logo.svg");
+      position: absolute;
+      width: toRem(580);
+      height: toRem(614);
+
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+
+      @media (max-width: $tablet) {
+        display: none;
+      }
+    }
   }
 
   &__tippy-parent {
@@ -371,6 +386,24 @@
   ul {
     margin-bottom: toRem(20);
     border: toRem(1) solid #bebebe;
+    position: relative;
+    z-index: 2;
+    &::before {
+      content: url("@img/decore/decore.svg");
+      position: absolute;
+      width: toRem(1075);
+      height: toRem(226);
+
+      top: 50%;
+      left: 0;
+      transform: translateX(-15%) translateY(-50%);
+      opacity: 0.03;
+      z-index: -1;
+
+      @media (max-width: $tablet) {
+        display: none;
+      }
+    }
 
     li {
       display: grid;
@@ -657,12 +690,30 @@
 
 .production {
   background-color: #61703d;
-  @include adaptiveValue("padding-top", 72, 64, 0, 800, 375);
-  @include adaptiveValue("padding-bottom", 123, 64, 0, 1213, 800);
-  @media (min-width: $tablet2) {
-    @include adaptiveValue("padding-top", 112, 72, 0, 1213, 800);
-  }
+
   &__container {
+    @include adaptiveValue("padding-top", 72, 64, 0, 800, 375);
+    @include adaptiveValue("padding-bottom", 123, 64, 0, 1213, 800);
+    @media (min-width: $tablet2) {
+      @include adaptiveValue("padding-top", 112, 72, 0, 1213, 800);
+    }
+    position: relative;
+    z-index: 2;
+    &::before {
+      content: url("@img/decore/decore.svg");
+      position: absolute;
+      width: toRem(1075);
+      height: toRem(226);
+
+      top: toRem(96);
+      left: toRem(-435);
+      opacity: 0.1;
+      z-index: -1;
+
+      @media (max-width: $tablet2) {
+        display: none;
+      }
+    }
   }
 
   &__title {
