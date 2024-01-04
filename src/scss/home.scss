@@ -732,11 +732,18 @@
 
 .cooperation {
   @include adaptiveValue("padding-top", 72, 64, 0, 800, 375);
-  @include adaptiveValue("padding-bottom", 123, 64, 0, 1213, 800);
+  @include adaptiveValue("padding-bottom", 50, 30);
+  display: grid;
+
   @media (min-width: $tablet2) {
     @include adaptiveValue("padding-top", 92, 72, 0, 1213, 800);
+    @include adaptiveValue("gap", 85, 72, 0, 1213, 800);
+  }
+  @media (max-width: $tablet2) {
+    @include adaptiveValue("gap", 72, 64, 0, 800, 375);
   }
   &__container {
+    width: 100%;
   }
 
   &__title {
@@ -768,6 +775,9 @@
   }
 
   &__step {
+  }
+
+  &__contact {
   }
 }
 
@@ -940,5 +950,87 @@
   }
 
   &__text {
+  }
+}
+
+//========================================================================================================================================================
+
+.contact {
+  @media (min-width: $tablet) {
+    max-width: toRem(670);
+    margin: 0 auto;
+  }
+  &__title {
+    margin-bottom: toRem(32);
+    text-align: center;
+
+    @media (min-width: $tablet2) {
+      @include adaptiveValue("font-size", 75, 42, 0, 1213, 800);
+    }
+    @media (max-width: $tablet2) {
+      @include adaptiveValue("font-size", 42, 30, 0, 800, 375);
+    }
+  }
+
+  &__form {
+    @media (min-width: $tablet) {
+      max-width: toRem(372);
+      margin: 0 auto;
+    }
+  }
+}
+
+.form-contact {
+  &__line {
+    &:not(:last-child) {
+      margin-bottom: toRem(16);
+    }
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  &__placeholder {
+    color: #6c6c6c;
+    font-family: e-Ukraine Head;
+    font-size: toRem(12);
+    font-weight: 400;
+    line-height: 175%; /* 21px */
+
+    transform: translateY(toRem(-5));
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+  }
+
+  &__input {
+    &:focus + .form-contact__placeholder,
+    &:not(:placeholder-shown) + .form-contact__placeholder,
+    &:focus:not(:placeholder-shown) + .form-contact__placeholder {
+      opacity: 1;
+    }
+  }
+
+  &__text {
+    color: #6c6c6c;
+    font-family: e-Ukraine Head;
+    font-size: toRem(12);
+    font-weight: 400;
+    line-height: 175%;
+
+    margin-bottom: toRem(16);
+    a {
+      color: #61703d;
+      @media (any-hover: hover) {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__button {
+    width: 100%;
   }
 }
