@@ -1,10 +1,60 @@
-<div id="popup" aria-hidden="true" class="popup">
+<div id="contact" aria-hidden="true" class="popup">
 	<div class="popup__wrapper">
 		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрити</button>
-			<div class="popup__text">
-				Text
-			</div>
+			<button data-close type="button" class="popup__close _icon-close"></button>
+
+
+			<div class="popup__title">Контактна інформація</div>
+			<div class="popup__text">Заповніть будь-ласка контактні данні, ми з вами звʼяжемося</div>
+
+			<form data-dev data-popup-message="#thank" action="#" class="popup__form form-contact">
+				<div class="form-contact__line">
+					<label for="#" class="form-contact__label">
+						<input autocomplete="off" type="text" name="form[]" data-required placeholder="Ім'я" class="form-contact__input input">
+						<span class="form-contact__placeholder">Як до вас звертатись?</span>
+					</label>
+				</div>
+				<div class="form-contact__line">
+					<label for="#" class="form-contact__label">
+						<input autocomplete="off" type="text" name="form[]" data-required placeholder="Компанія" class="form-contact__input input">
+						<span class="form-contact__placeholder">Компанія</span>
+					</label>
+				</div>
+				<div class="form-contact__row">
+					<label for="#" class="form-contact__label">
+						<input autocomplete="off" type="text" name="form[]" data-required placeholder="Телефон" class="form-contact__input input">
+						<span class="form-contact__placeholder">Телефон</span>
+					</label>
+					<label for="#" class="form-contact__label">
+						<input autocomplete="off" type="text" name="form[]" data-required="email" placeholder="Електронна пошта" class="form-contact__input input">
+						<span class="form-contact__placeholder">Електронна пошта</span>
+					</label>
+				</div>
+
+				<div class="form-contact__error">Помилка у формі запису.</div>
+
+				<div class="form-contact__text">Заповнюючи цю форми ви згодні з <a href="#" target="_blank">політикою конфіденційности</a> та правилами <a href="#" target="_blank">оброботки персональних данних.</a></div>
+				<button class="form-contact__button button button_green">Відправити</button>
+			</form>
+
+		</div>
+	</div>
+</div>
+
+<!-- /////////////////// -->
+
+<div id="thank" aria-hidden="true" class="popup popup-thank">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close _icon-close"></button>
+
+
+			<div class="popup__ico _icon-done"></div>
+			<div class="popup__title popup__title_center">Відправлено!</div>
+			<div class="popup__text popup__text_center">Ми вже працюємо над вашою заявкою, очікуйте зворотньюого звʼязку. Дякую та гарного дня. Слава Україні!</div>
+
+			<button data-close type="button" class="popup__button button button_green">Закрити</button>
+
 		</div>
 	</div>
 </div>

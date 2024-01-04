@@ -987,6 +987,19 @@
     }
   }
 
+  &__row {
+    display: grid;
+    gap: toRem(16);
+
+    @media (min-width: em(660)) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: toRem(16);
+    }
+  }
+
   &__label {
     display: flex;
     flex-direction: column-reverse;
@@ -1002,6 +1015,11 @@
     transform: translateY(toRem(-5));
     opacity: 0;
     transition: all 0.3s ease 0s;
+
+    label._form-error & {
+      color: #ff6161;
+      opacity: 1;
+    }
   }
 
   &__input {
@@ -1030,8 +1048,25 @@
     }
   }
 
+  &__error {
+    color: #eb5757;
+    font-family: e-Ukraine;
+    font-size: toRem(13);
+    font-weight: 200;
+    line-height: 175%; /* 22.75px */
+
+    margin-top: toRem(24);
+    margin-bottom: toRem(24);
+    display: none;
+
+    form._form-error & {
+      display: block;
+    }
+  }
+
   &__button {
     width: 100%;
+    margin-top: auto;
   }
 }
 

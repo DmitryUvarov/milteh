@@ -471,7 +471,7 @@
 							<h6 class="contact-milteh__title">Форма підбору</h6>
 							<div class="contact-milteh__text">будь-ласка, оберіть необхідну комплектацію </div>
 
-							<form action="#" class="contact-milteh__form form-milteh">
+							<form data-dev data-popup-message="#thank" action="#" class="contact-milteh__form form-milteh">
 								<div class="form-milteh__items">
 
 									<div class="form-milteh__item" data-range-parent>
@@ -540,7 +540,51 @@
 									</div>
 
 								</div>
-								<button type="submit" class="form-milteh__button button button_green button_green_line">Замовити зараз</button>
+								<button data-popup="#contact-milteh" type="button" class="form-milteh__button button button_green button_green_line">Замовити зараз</button>
+
+								<div id="contact-milteh" aria-hidden="true" class="popup">
+									<div class="popup__wrapper">
+										<div class="popup__content">
+											<button data-close type="button" class="popup__close _icon-close"></button>
+
+
+											<div class="popup__title">Контактна інформація</div>
+											<div class="popup__text">Заповніть будь-ласка контактні данні, ми з вами звʼяжемося</div>
+
+											<div action="#" class="popup__form form-contact">
+												<div class="form-contact__line">
+													<label for="#" class="form-contact__label">
+														<input autocomplete="off" type="text" name="form[]" data-required placeholder="Ім'я" class="form-contact__input input">
+														<span class="form-contact__placeholder">Як до вас звертатись?</span>
+													</label>
+												</div>
+												<div class="form-contact__line">
+													<label for="#" class="form-contact__label">
+														<input autocomplete="off" type="text" name="form[]" data-required placeholder="Компанія" class="form-contact__input input">
+														<span class="form-contact__placeholder">Компанія</span>
+													</label>
+												</div>
+												<div class="form-contact__row">
+													<label for="#" class="form-contact__label">
+														<input autocomplete="off" type="text" name="form[]" data-required placeholder="Телефон" class="form-contact__input input">
+														<span class="form-contact__placeholder">Телефон</span>
+													</label>
+													<label for="#" class="form-contact__label">
+														<input autocomplete="off" type="text" name="form[]" data-required="email" placeholder="Електронна пошта" class="form-contact__input input">
+														<span class="form-contact__placeholder">Електронна пошта</span>
+													</label>
+												</div>
+
+												<div class="form-contact__error">Помилка у формі запису.</div>
+
+												<div class="form-contact__text">Заповнюючи цю форми ви згодні з <a href="#" target="_blank">політикою конфіденційности</a> та правилами <a href="#" target="_blank">оброботки персональних данних.</a></div>
+												<button type="submit" class="form-contact__button button button_green">Відправити</button>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
 							</form>
 
 						</div>
@@ -758,34 +802,9 @@
 
 		</main>
 		@@include('html/_footer.htm',{})
+		@@include('html/_popup.htm',{})
 	</div>
 	@@include('html/_js.htm',{})
 </body>
 
 </html>
-
-
-<!-- <div data-tippy-root="" id="tippy-1" style="pointer-events: none; z-index: 9999; visibility: visible; position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(1061px, 40px);">
-	<div class="tippy-box" data-state="visible" tabindex="-1" data-animation="fade" role="tooltip" data-placement="bottom" style="max-width: 350px; transition-duration: 300ms;">
-		<div class="tippy-content" data-state="visible" style="transition-duration: 300ms;">
-			<div class="tippy null">
-				<h6 class="tippy__title">title</h6>
-				<p class="tippy__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis, provident.</p>
-			</div>
-		</div>
-		<div class="tippy-arrow" style="position: absolute; left: 0px; transform: translate(167px, 0px);"></div>
-	</div>
-</div> -->
-
-
-<!-- <div data-tippy-root="" id="tippy-1" style="pointer-events: none; z-index: 9999; visibility: visible; position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(1061px, 40px);">
-	<div class="tippy-box" data-state="visible" tabindex="-1" data-animation="fade" role="tooltip" data-placement="bottom" style="max-width: 350px; transition-duration: 300ms;">
-		<div class="tippy-content" data-state="visible" style="transition-duration: 300ms;">
-			<div class="tippy tippy_dark">
-				<h6 class="tippy__title">title</h6>
-				<p class="tippy__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis, provident.</p>
-			</div>
-		</div>
-		<div class="tippy-arrow" style="position: absolute; left: 0px; transform: translate(167px, 0px);"></div>
-	</div>
-</div> -->

@@ -1,61 +1,181 @@
 body::after {
-	content: "";
-	background-color: rgba(0, 0, 0, 0.5);
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	opacity: 0;
-	transition: opacity 0.8s ease 0s;
-	pointer-events: none;
-	z-index: 149;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease 0s;
+  pointer-events: none;
+  z-index: 149;
 }
 .popup-show body::after {
-	opacity: 1;
+  opacity: 1;
 }
 .popup {
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	padding: 30px 10px;
-	transition: visibility 0.8s ease 0s;
-	visibility: hidden;
-	pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 30px 10px;
+  transition: visibility 0.8s ease 0s;
+  visibility: hidden;
+  pointer-events: none;
+
+  @media (max-width: em(660)) {
+    padding: 0;
+  }
 }
 .popup_show {
-	z-index: 150;
-	visibility: visible;
-	overflow: auto;
-	pointer-events: auto;
+  z-index: 150;
+  visibility: visible;
+  overflow: auto;
+  pointer-events: auto;
 }
 .popup_show .popup__content {
-	visibility: visible;
-	transform: scale(1);
+  visibility: visible;
+  transform: scale(1);
 }
 .popup__wrapper {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	min-height: 100%;
-	flex: 1 1 auto;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .popup__content {
-	visibility: hidden;
-	transform: scale(0);
-	transition: transform 0.3s ease 0s;
-	background-color: #eee;
-	padding: 20px;
-	width: 100%;
-	max-width: 900px;
-	border-radius: 20px;
-	.lock & {
-		visibility: visible;
-	}
+  visibility: hidden;
+  transform: scale(0);
+  transition: transform 0.3s ease 0s;
+  background-color: #fff;
+
+  width: 100%;
+  max-width: toRem(600);
+
+  position: relative;
+  padding: toRem(48);
+
+  @media (max-width: em(660)) {
+    padding: toRem(48) toRem(24);
+    min-height: 100svh;
+
+    display: flex;
+    flex-direction: column;
+  }
+  .lock & {
+    visibility: visible;
+  }
+}
+
+//========================================================================================================================================================
+
+.popup {
+  &__wrapper {
+  }
+
+  &__content {
+  }
+
+  &__close {
+    position: absolute;
+
+    top: toRem(24);
+    right: toRem(24);
+
+    width: toRem(32);
+    height: toRem(32);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: toRem(16);
+    color: #000;
+
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: #fff;
+        background-color: #61703d;
+      }
+    }
+  }
+
+  &__form {
+    @media (max-width: em(660)) {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__ico {
+    width: toRem(42);
+    height: toRem(42);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: toRem(36);
+    color: #61703d;
+    margin-bottom: toRem(18);
+  }
+
+  &__title {
+    color: #1c210f;
+    font-family: e-Ukraine Head;
+    font-size: toRem(24);
+    font-weight: 700;
+    line-height: 95%; /* 22.8px */
+    text-transform: uppercase;
+
+    margin-bottom: toRem(16);
+
+    @media (max-width: em(660)) {
+      max-width: toRem(250);
+    }
+
+    &_center {
+      text-align: center;
+    }
+  }
+
+  &__text {
+    color: #1c210f;
+    font-family: e-Ukraine Head;
+    font-size: toRem(14);
+    font-weight: 300;
+    line-height: 150%; /* 21px */
+
+    margin-bottom: toRem(24);
+
+    &_center {
+      text-align: center;
+    }
+  }
+
+  &__button {
+    width: 100%;
+  }
+}
+
+//========================================================================================================================================================
+
+.popup-thank {
+  .popup__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    max-width: toRem(450);
+  }
 }
