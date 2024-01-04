@@ -259,3 +259,201 @@
     }
   }
 }
+
+//========================================================================================================================================================
+
+.milteh {
+  @media (min-width: $pc) {
+    background: #3a3a3a;
+  }
+
+  &__container {
+    @media (max-width: $tablet2) {
+      padding: 0;
+    }
+  }
+
+  &__body {
+    display: grid;
+    @include adaptiveValue("gap", 70, 48, 0, 1213, 800);
+
+    @include adaptiveValue("padding-top", 90, 65, 0, 1213, 800);
+
+    @media (min-width: $pc) {
+      padding-bottom: toRem(120);
+    }
+    @media (max-width: $pc) {
+      background: #3a3a3a;
+    }
+    @media (max-width: $tablet2) {
+      padding-right: toRem(24);
+      padding-left: toRem(24);
+    }
+  }
+
+  &__drones {
+  }
+
+  &__contact {
+  }
+}
+.drones {
+  &__title {
+    text-align: center;
+    @include adaptiveValue("margin-bottom", 48, 32, 0, 1213, 800);
+  }
+}
+
+.drone {
+  &__parent {
+    position: relative;
+    padding-bottom: percent(466, 752);
+    @media (min-width: $pc) {
+      margin: 0 toRem(20);
+      padding-bottom: percent(668, 1165);
+    }
+  }
+
+  &__image-ibg--contain {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &__tippy-parent {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &__tippy {
+    &_1 {
+      top: percent(53, 668);
+      left: percent(369, 1125);
+    }
+
+    &_2 {
+      top: percent(242, 668);
+      left: percent(515, 1125);
+    }
+
+    &_3 {
+      top: percent(332, 668);
+      left: percent(272, 1125);
+    }
+
+    &_4 {
+      top: percent(350, 668);
+      left: percent(562, 1125);
+    }
+    &_5 {
+      top: percent(378, 668);
+      left: percent(881, 1125);
+    }
+
+    &_6 {
+      top: percent(518, 668);
+      left: percent(272, 1125);
+    }
+  }
+
+  &__content {
+    max-width: toRem(768);
+    margin: 0 auto;
+
+    @media (min-width: $tablet2) {
+      @include adaptiveValue("margin-top", -97, -56, 0, 1213, 800);
+    }
+    @media (max-width: $tablet2) {
+      @include adaptiveValue("margin-top", -56, -45, 0, 800, 375);
+    }
+  }
+
+  &__name {
+    text-align: center;
+    font-family: e-Ukraine Head;
+    font-weight: 700;
+    line-height: 95%; /* 134.9px */
+    text-transform: uppercase;
+
+    -webkit-text-stroke: toRem(2) #fff;
+    color: transparent;
+
+    @include adaptiveValue("margin-bottom", 22, 48, 0, 1213, 800);
+
+    @media (min-width: $tablet2) {
+      @include adaptiveValue("font-size", 142, 100, 0, 1213, 800);
+    }
+    @media (max-width: $tablet2) {
+      @include adaptiveValue("font-size", 100, 60, 0, 800, 375);
+    }
+  }
+
+  &__text {
+    margin-bottom: toRem(16);
+  }
+
+  &__subtitle {
+    margin-bottom: toRem(30);
+    font-family: e-Ukraine;
+    font-size: toRem(15);
+    font-weight: 300;
+    line-height: 175%; /* 26.25px */
+  }
+
+  &__title {
+    font-family: e-Ukraine;
+    font-size: toRem(15);
+    font-weight: 400;
+    line-height: 150%; /* 22.5px */
+    text-transform: uppercase;
+
+    margin-bottom: toRem(20);
+  }
+
+  ul {
+    margin-bottom: toRem(20);
+    border: toRem(1) solid #bebebe;
+
+    li {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: toRem(11);
+      color: #fff;
+      font-family: e-Ukraine Head;
+      font-size: toRem(14);
+      font-weight: 300;
+      line-height: 150%; /* 21px */
+
+      hyphens: auto;
+      //   word-wrap: break-word;
+      word-break: break-all;
+
+      padding: toRem(5) toRem(16);
+
+      &:not(:last-child) {
+        border-bottom: toRem(1) solid #bebebe;
+      }
+
+      span {
+        &:first-child {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
+  &__mark {
+    font-family: e-Ukraine Head;
+    font-size: toRem(12);
+    font-weight: 400;
+    line-height: 150%; /* 18px */
+    text-transform: uppercase;
+  }
+}
+.tippy {
+}

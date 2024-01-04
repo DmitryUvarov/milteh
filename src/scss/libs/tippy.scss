@@ -3,11 +3,10 @@
 }
 [data-tippy-root] {
   // max-width: calc(100vw - 10px);
-  max-width: toRem(220);
+  max-width: toRem(240);
 }
 .tippy-box {
   position: relative;
-  background-color: #1c210f;
   outline: 0;
   transition-property: transform, visibility, opacity;
 }
@@ -67,6 +66,5 @@
 }
 .tippy-content {
   position: relative;
-  padding: 16px 20px;
   z-index: 1;
 }

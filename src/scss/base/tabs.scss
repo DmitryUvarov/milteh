@@ -1,23 +1,68 @@
 .tabs {
-	// .tabs__navigation
-	&__navigation {
-		display: flex;
-	}
-	// .tabs__title
-	&__title {
-		border: 1px solid #eee;
-		padding: toRem(10) toRem(15);
-		border-radius: toRem(5);
-		&._tab-active {
-			border: 1px solid #000;
-		}
-	}
-	// .tabs__content
-	&__content {
-		border: 1px solid #eee;
-		padding: toRem(10) toRem(15);
-	}
-	// .tabs__body
-	&__body {
-	}
+  // .tabs__navigation
+  &__overlay {
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: $tablet2) {
+      width: calc(100vw);
+      margin: 0 toRem(-24);
+    }
+  }
+  &__navigation {
+    display: flex;
+    overflow-x: auto;
+
+    white-space: nowrap;
+
+    @media (max-width: $tablet2) {
+      padding: toRem(0) toRem(24);
+    }
+
+    &::-webkit-scrollbar {
+      width: 0; /* Ширина скроллбара */
+      height: 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #fff; /* Цвет ползунка */
+      border-radius: 6px; /* Закругленные углы ползунка */
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #f1f1f1; /* Цвет фона трека (фона, по которому двигается ползунок) */
+    }
+  }
+  // .tabs__title
+  &__title {
+    display: flex;
+    align-items: center;
+    border: toRem(1) solid #61703d;
+    padding: toRem(10) toRem(18);
+    color: #fff;
+
+    font-family: e-Ukraine Head;
+    font-size: toRem(12);
+    font-weight: 400;
+    line-height: 150%; /* 18px */
+    text-transform: uppercase;
+
+    height: toRem(50);
+    transition: all 0.3s ease 0s;
+    &._tab-active {
+      background-color: #61703d;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #d5d5d5;
+      }
+    }
+  }
+  // .tabs__content
+  &__content {
+  }
+  // .tabs__body
+  &__body {
+  }
 }

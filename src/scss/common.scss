@@ -91,8 +91,11 @@
 .tippy-block {
   display: grid;
   gap: toRem(7);
-  max-width: toRem(220);
+  max-width: toRem(240);
+  background-color: #5c5c5c;
+  padding: toRem(16) toRem(20);
   &_dark {
+    background-color: #1c210f;
   }
   &__title {
     color: #fff;
