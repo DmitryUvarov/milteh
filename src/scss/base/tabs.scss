@@ -1,13 +1,13 @@
 .tabs {
   // .tabs__navigation
   &__overlay {
-    display: flex;
-    justify-content: center;
+    // display: flex;
+    // justify-content: center;
 
-    @media (max-width: $tablet2) {
-      width: calc(100vw);
-      margin: 0 toRem(-24);
-    }
+    // @media (max-width: $tablet2) {
+    //   width: calc(100vw);
+    //   margin: 0 toRem(-24);
+    // }
   }
   &__navigation {
     display: flex;
@@ -16,7 +16,10 @@
     white-space: nowrap;
 
     @media (max-width: $tablet2) {
-      padding: toRem(0) toRem(24);
+      // padding: toRem(0) toRem(24);
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
     }
 
     &::-webkit-scrollbar {
@@ -37,6 +40,7 @@
   &__title {
     display: flex;
     align-items: center;
+    justify-content: center;
     border: toRem(1) solid #61703d;
     padding: toRem(10) toRem(18);
     color: #fff;

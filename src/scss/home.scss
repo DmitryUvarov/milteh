@@ -327,6 +327,10 @@
     height: 100%;
     top: 0;
     left: 0;
+
+    @media (max-width: $tablet2) {
+      display: none;
+    }
   }
 
   &__content {
@@ -922,6 +926,10 @@
 .step-cooperation {
   @include adaptiveValue("padding", 64, 32, 0, 1213, 800);
   background-color: #61703d;
+
+  @media (max-width: $tablet2) {
+    background-color: #1c210f;
+  }
   &__title {
     margin-bottom: toRem(24);
 
@@ -956,6 +964,11 @@
       display: none;
     }
   }
+
+  @media (max-width: $tablet2) {
+    padding-left: toRem(48);
+    position: relative;
+  }
   &__name {
     font-family: e-Ukraine Head;
     font-size: toRem(24);
@@ -966,10 +979,11 @@
   }
 
   &__dot {
-    margin-bottom: toRem(24);
-    height: 24px;
-
-    position: relative;
+    @media (min-width: $tablet2) {
+      position: relative;
+      margin-bottom: toRem(24);
+      height: 24px;
+    }
     &::after {
       content: "";
       display: block;
@@ -980,6 +994,13 @@
       background-color: #61703d;
       position: relative;
       z-index: 2;
+
+      @media (max-width: $tablet2) {
+        position: absolute;
+        top: 0;
+        left: toRem(2);
+        background-color: #1c210f;
+      }
     }
 
     &::before {
@@ -997,6 +1018,15 @@
       @media (min-width: $tablet2) {
         width: calc(100% + toRem(24));
         left: toRem(20);
+      }
+
+      @media (max-width: $tablet2) {
+        width: toRem(4);
+        height: calc(100% + toRem(15));
+
+        top: toRem(5);
+        left: toRem(12);
+        transform: translateY(0);
       }
     }
   }
